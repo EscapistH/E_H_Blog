@@ -53,7 +53,7 @@ import { NIcon, NLayout, NLayoutHeader, NFlex, NButton, NAvatar } from 'naive-ui
 }
 
 .header-icon-title>p {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .header-opt-item {
