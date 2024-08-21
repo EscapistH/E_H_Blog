@@ -1,7 +1,5 @@
 <script setup>
-
 import { NIcon, NLayout, NLayoutHeader, NFlex, NButton, NAvatar } from 'naive-ui'
-
 </script>
 
 <template>
