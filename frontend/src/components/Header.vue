@@ -1,5 +1,7 @@
 <script setup>
 
+import { NIcon, NLayout, NLayoutHeader, NFlex, NButton, NAvatar } from 'naive-ui'
+
 </script>
 
 <template>
@@ -25,8 +27,7 @@
                     <p>item5</p>
                 </n-flex>
                 <n-flex class="header-avatar-button" justify="end">
-                    <n-avatar></n-avatar>
-                    <n-button>这是一个按钮</n-button>
+                    <n-button text @click="window.alert('button clicked')"><n-avatar></n-avatar></n-button>
                 </n-flex>
             </n-flex>
         </n-layout-header>

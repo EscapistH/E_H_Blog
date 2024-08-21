@@ -1,5 +1,7 @@
 <script setup>
 
+import { NLayout, NLayoutHeader } from 'naive-ui'
+
 </script>
 
 <template>
