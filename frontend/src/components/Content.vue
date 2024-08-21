@@ -1,0 +1,20 @@
+<script setup>
+
+</script>
+
+<template>
+    <n-layout>
+        <n-layout-content class="main-container">
+            This is Content part
+        </n-layout-content>
+    </n-layout>
+</template>
+
+<style scoped>
+.main-container{
+    background-color: #c3d7df;
+    min-height: 50vh;
+    height: 80vh;
+}
+
+</style>
