@@ -15,7 +15,7 @@ import { NLayout, NLayoutContent } from 'naive-ui'
 <style scoped>
 .main-container{
     background-color: #c3d7df;
-    min-height: 88.8vh;
+    min-height: 80vh;
 }
 
 </style>
