@@ -1,0 +1,14 @@
+# 忽略文件
+# Vue 项目
+node_modules/
+.vscode/
+
+# FastAPI 项目
+lib/
+lib64
+bin/
+include/
+*.pyc
+*.pyo
+.pytest_cache/
+pyvenv.cfg
