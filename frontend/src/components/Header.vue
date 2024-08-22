@@ -1,5 +1,6 @@
 <script setup>
 import { NIcon, NLayout, NLayoutHeader, NFlex, NButton, NAvatar } from 'naive-ui'
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -17,12 +18,22 @@ import { NIcon, NLayout, NLayoutHeader, NFlex, NButton, NAvatar } from 'naive-ui
                     </n-icon>
                     <p>HeSir的小站</p>
                 </n-flex>
-                <n-flex class="header-opt-item" justify="space-evenly">
-                    <p>item1</p>
-                    <p>item2</p>
-                    <p>item3</p>
-                    <p>item4</p>
-                    <p>item5</p>
+                <n-flex class="header-items" justify="space-evenly">
+                    <router-link to>
+                        <n-button text>Home</n-button>
+                    </router-link>
+                    <router-link to>
+                        <n-button text>item2</n-button>
+                    </router-link>
+                    <router-link to>
+                        <n-button text>item3</n-button>
+                    </router-link>
+                    <router-link to>
+                        <n-button text>item4</n-button>
+                    </router-link>
+                    <router-link to>
+                        <n-button text>item5</n-button>
+                    </router-link>
                 </n-flex>
                 <n-flex class="header-avatar-button" justify="end">
                     <n-button text @click="window.alert('button clicked')"><n-avatar></n-avatar></n-button>
@@ -54,11 +65,11 @@ import { NIcon, NLayout, NLayoutHeader, NFlex, NButton, NAvatar } from 'naive-ui
     font-size: 18px;
 }
 
-.header-opt-item {
+.header-items {
     flex-grow: 10;
 }
 
-.header-opt-item>p {
+.header-items>p {
     font-size: 18px;
 }
 
