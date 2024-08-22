@@ -9,7 +9,6 @@ import { RouterView } from 'vue-router';
 <template>
     <n-layout>
         <n-layout-content class="main-container">
-            This is Content part <br>
             <router-view />
         </n-layout-content>
     </n-layout>

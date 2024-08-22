@@ -19,24 +19,24 @@ import { RouterLink } from 'vue-router';
                     <p>HeSir的小站</p>
                 </n-flex>
                 <n-flex class="header-items" justify="space-evenly">
-                    <router-link to>
-                        <n-button text>Home</n-button>
+                    <router-link to="/">
+                        <n-button text color="#c3d7df" size="large">首页</n-button>
+                    </router-link>
+                    <router-link to="/article">
+                        <n-button text color="#c3d7df">文章</n-button>
+                    </router-link>
+                    <router-link to="/about">
+                        <n-button text color="#c3d7df">关于</n-button>
                     </router-link>
                     <router-link to>
-                        <n-button text>item2</n-button>
+                        <n-button text color="#c3d7df">item4</n-button>
                     </router-link>
                     <router-link to>
-                        <n-button text>item3</n-button>
-                    </router-link>
-                    <router-link to>
-                        <n-button text>item4</n-button>
-                    </router-link>
-                    <router-link to>
-                        <n-button text>item5</n-button>
+                        <n-button text color="#c3d7df">item5</n-button>
                     </router-link>
                 </n-flex>
                 <n-flex class="header-avatar-button" justify="end">
-                    <n-button text @click="window.alert('button clicked')"><n-avatar></n-avatar></n-button>
+                    <n-button text @click="console.log('button clicked')"><n-avatar></n-avatar></n-button>
                 </n-flex>
             </n-flex>
         </n-layout-header>
@@ -47,9 +47,11 @@ import { RouterLink } from 'vue-router';
 .header-container {
     height: 100%;
     color: #c3d7df;
+    text-shadow: 0 0 10px rgba(0, 0, 0);
+
     background-color: #5698c3;
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px 10px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header-content {
@@ -57,20 +59,25 @@ import { RouterLink } from 'vue-router';
     padding-right: 8px;
 }
 
+.header-icon {
+    flex-grow: 1;
+}
+
+.header-icon>svg {
+    width: 30px;
+    height: 30px;
+}
+
 .header-icon-title {
     flex-grow: 1;
 }
 
-.header-icon-title>p {
+.header-icon-title p {
     font-size: 18px;
 }
 
 .header-items {
     flex-grow: 10;
-}
-
-.header-items>p {
-    font-size: 18px;
 }
 
 .header-avatar-button {
