@@ -6,28 +6,27 @@ const routes = [
         path: '/',
         name: 'Home',
         alias: ['/index', '/home'],
-        component: () => import('../views/Home.vue')
+        component: () => import('@/views/Home.vue')
     },
     {
         path: '/article',
-        name: 'User',
-        component: () => import('../views/Articles/BaseArticle.vue'),
+        name: 'Article',
         children: [
             {
                 path: '',
                 name: 'ArticleList',
-                component: () => import('../views/Articles/ArticleList.vue')
-            },{
+                component: () => import('@/views/Articles/ArticleList.vue')
+            }, {
                 path: ':id',
                 name: 'ArticleContent',
-                component: () => import('../views/Articles/ArticleContent.vue')
+                component: () => import('@/views/Articles/ArticleContent.vue')
             }
         ]
     },
     {
         path: '/about',
         name: 'About',
-        component: () => import('../views/About.vue')
+        component: () => import('@/views/About.vue')
     }
 ]
 

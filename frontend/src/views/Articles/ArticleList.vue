@@ -1,22 +1,25 @@
 <script setup>
 
-const Articles = [
-    { id: 1, title: '文章1', content: '这是文章1的内容' },
-    { id: 2, title: '文章2', content: '这是文章2的内容' },
-    { id: 3, title: '文章3', content: '这是文章3的内容' },
-    { id: 4, title: '文章4', content: '这是文章4的内容' },
-    { id: 5, title: '文章5', content: '这是文章5的内容' },
-    { id: 6, title: '文章6', content: '这是文章6的内容' },
-]
+import { useArticleStore } from '@/stores/articleStore';
+import { NList, NListItem } from 'naive-ui';
+const articleStore = useArticleStore();
+const articles = articleStore.articles;
+
 </script>
 
+<!-- views/Articles/ArticleList.vue -->
 <template>
-    Article List在这里啦<br/>
-    <template v-for="Article in Articles" :key="Article.id">
-        <router-link :to="`/article/${Article.id}`">
-            Article{{ Article.id }}<br />
-        </router-link>
-    </template>
+    <n-list hoverable class="article-list">
+        <template v-for="article in articles" :key="article.id">
+            <router-link :to="`/article/${article.id}`">
+                <n-list-item class="article-item">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.summary }}</p>
+                    <small>{{ article.date }}</small>
+                </n-list-item>
+            </router-link>
+        </template>
+    </n-list>
 </template>
 
 <style scoped></style>

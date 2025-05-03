@@ -1,22 +1,21 @@
 <script setup>
-
-import { NLayout, NLayoutContent } from 'naive-ui'
-
 import { RouterView } from 'vue-router';
 
 </script>
 
 <template>
-    <n-layout>
-        <n-layout-content class="main-container">
-            <router-view />
-        </n-layout-content>
-    </n-layout>
+    <div class="main-container">
+        <router-view></router-view>
+    </div>
 </template>
 
 <style scoped>
 .main-container {
-    background-color: #c3d7df;
-    min-height: 80vh;
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 85vh;
 }
 </style>

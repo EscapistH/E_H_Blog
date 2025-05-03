@@ -7,9 +7,18 @@ import Footer from './components/Footer.vue'
 </script>
 
 <template>
-    <Header></Header>
-    <Content></Content>
-    <Footer></Footer>
+    <div class="page-container">
+        <Header></Header>
+        <Content class="content-wrapper"></Content>
+        <Footer></Footer>
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.page-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #fff;
+}
+</style>
