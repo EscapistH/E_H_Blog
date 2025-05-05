@@ -1,18 +1,16 @@
 <script setup>
-
-import { NLayout, NLayoutHeader } from 'naive-ui'
-
 </script>
 
 <template>
-    <n-layout>
-        <n-layout-header class="footer-container">
-            <p>&copy; 2025 HeSir's Blog | All rights reserved.</p>
-            <a href="https://github.com/EscapistH" target="_blank">
-                GitHub/EscapistH
-            </a>
-        </n-layout-header>
-    </n-layout>
+    <div class="footer-container">
+        <p>&copy; 2025 HeSir's Blog | All rights reserved.</p>
+        <a href="https://github.com/EscapistH" target="_blank">
+            GitHub/EscapistH
+        </a><br />
+        <a href="https://github.com/EscapistH/E_H_Blog" target="_blank">
+            Click here go to this project source code
+        </a>
+    </div>
 </template>
 
 <style scoped>

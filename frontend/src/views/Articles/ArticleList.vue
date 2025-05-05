@@ -9,17 +9,19 @@ const articles = articleStore.articles;
 
 <!-- views/Articles/ArticleList.vue -->
 <template>
-    <n-list hoverable class="article-list">
-        <template v-for="article in articles" :key="article.id">
+    <div class="article-list">
+        <div v-for="article in articles" :key="article.id" class="article-card card">
             <router-link :to="`/article/${article.id}`">
-                <n-list-item class="article-item">
-                    <h3>{{ article.title }}</h3>
-                    <p>{{ article.summary }}</p>
-                    <small>{{ article.date }}</small>
-                </n-list-item>
+                <h2 class="article-title">{{ article.title }}</h2>
+                <p class="article-summary">{{ article.summary }}</p>
+                <div class="article-meta">
+                    <span>📅 {{ article.date }}</span>
+                    <span>✍️ {{ article.author }}</span>
+                </div>
             </router-link>
-        </template>
-    </n-list>
+        </div>
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

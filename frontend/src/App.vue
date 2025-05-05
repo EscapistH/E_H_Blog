@@ -1,24 +1,26 @@
 <script setup>
-
 import Header from './components/Header.vue'
 import Content from './components/Content.vue'
 import Footer from './components/Footer.vue'
 
+import { NScrollbar } from 'naive-ui'
 </script>
 
 <template>
-    <div class="page-container">
-        <Header></Header>
-        <Content class="content-wrapper"></Content>
-        <Footer></Footer>
-    </div>
+    <n-scrollbar style="max-height: 100vh;">
+        <div class="app-container">
+            <Header></Header>
+            <Content></Content>
+            <Footer></Footer>
+        </div>
+    </n-scrollbar>
 </template>
 
 <style scoped>
-.page-container{
+.app-container {
+    font-size: 1.6rem;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
     background-color: #fff;
 }
 </style>

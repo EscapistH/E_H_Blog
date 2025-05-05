@@ -1,48 +1,89 @@
 <script setup>
-import { NLayout, NButton, NAvatar } from 'naive-ui'
+import { NAvatar } from 'naive-ui'
 import { RouterLink } from 'vue-router';
 
 import { useConfigStore } from '@/stores/configStore';
 const configStore = useConfigStore();
 const config = configStore.sysConfig;
-
 </script>
 
 <template>
-    <n-layout>
-        <div class="container">
-            <div class="icon-title">
-                <p>{{ config.title }}</p>
-            </div>
-            <div class="items">
-                <template v-for="item in config.headerItems">
-                    <router-link :to="item.link">
-                        <n-button text color="#c3d7df">{{ item.name }}</n-button>
-                    </router-link>
-                </template>
-            </div>
-            <div class="avatar-button">
-                <n-button text><n-avatar></n-avatar></n-button>
-            </div>
+    <div class="header-container">
+        <div class="header-icon-title">
+            <router-link to="/">
+                <h1>{{ config.title }}</h1>
+            </router-link>
         </div>
-    </n-layout>
+        <div class="header-items">
+            <template v-for="item in config.headerItems">
+                <router-link :to="item.link" class="nav-link">{{ item.name }}</router-link>
+            </template>
+        </div>
+        <div class="header-avatar-button">
+            <n-avatar round :size="40" color="#2D76C4" text-color="#fff">
+                {{ config.userInitials }}
+            </n-avatar>
+        </div>
+    </div>
 </template>
 
 <style scoped>
-.container {
+.header-container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+    background: #2D76C4;
+    color: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-icon-title {
+    flex-grow: 0;
+    margin-left: 1rem;
+}
+
+.header-icon-title h1 {
     color: #EDEDED;
-    background-color: #2D76C4;
-    text-shadow: 0 0 10px rgba(0, 0, 0);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.3);
+    font-size: 2.8rem;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .header-items {
-    flex-grow: 10;
+    display: flex;
+    flex-grow: 2;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-link {
+    color: #EDEDED;
+    margin: 0 0.8rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    bottom: -4px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 .header-avatar-button {
-    flex-grow: 1;
+    flex-grow: 0;
+    margin-right: 1rem;
 }
 </style>

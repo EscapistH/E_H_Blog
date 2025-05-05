@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    About在这里啦
+    <div>
+        About在这里啦
+    </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
