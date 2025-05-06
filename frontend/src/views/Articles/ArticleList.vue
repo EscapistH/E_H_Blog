@@ -1,7 +1,7 @@
 <script setup>
 
 import { useArticleStore } from '@/stores/articleStore';
-import { NList, NListItem } from 'naive-ui';
+import { NTag } from 'naive-ui';
 const articleStore = useArticleStore();
 const articles = articleStore.articles;
 
@@ -10,9 +10,10 @@ const articles = articleStore.articles;
 <!-- views/Articles/ArticleList.vue -->
 <template>
     <div class="article-list">
-        <div v-for="article in articles" :key="article.id" class="article-card card">
+        <div v-for="article in articles" :key="article.id" class="article-item">
             <router-link :to="`/article/${article.id}`">
                 <h2 class="article-title">{{ article.title }}</h2>
+                <n-tag type="info" size="small" class="article-tag">{{ article.tag }}</n-tag>
                 <p class="article-summary">{{ article.summary }}</p>
                 <div class="article-meta">
                     <span>📅 {{ article.date }}</span>
@@ -23,5 +24,4 @@ const articles = articleStore.articles;
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

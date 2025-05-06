@@ -8,7 +8,7 @@
             GitHub/EscapistH
         </a><br />
         <a href="https://github.com/EscapistH/E_H_Blog" target="_blank">
-            Click here go to this project source code
+            Click here to view this project source code
         </a>
     </div>
 </template>
@@ -22,6 +22,6 @@ a {
     background-color: #2D76C4;
     color: #EDEDED;
     text-align: center;
-    padding: 10px;
+    padding: 1rem;
 }
 </style>

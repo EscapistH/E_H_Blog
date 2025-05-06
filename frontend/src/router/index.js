@@ -3,6 +3,20 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
     {
+        path: '/404',
+        name: 'NotFound',
+        hidden: true,
+        component: () => import('@/views/404.vue'),
+        meta: {
+            title: '哦豁，页面好像不存在啊'
+        }
+    },
+    {
+        path: "/:pathMatch(.*)",
+        redirect: "/404",
+        hidden: true
+    },
+    {
         path: '/',
         name: 'Home',
         alias: ['/index', '/home'],
@@ -33,6 +47,11 @@ const routes = [
 const router = createRouter({
     history: createWebHashHistory(),
     routes
+})
+
+router.beforeEach(async (to, from) => {
+    // 设置页面标题
+    document.title = to.meta?.title || 'HeSir的小站' // 优先使用路由meta中的标题，否则使用默认标题
 })
 
 export default router

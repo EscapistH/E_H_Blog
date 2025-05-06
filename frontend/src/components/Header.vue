@@ -1,10 +1,29 @@
 <script setup>
-import { NAvatar } from 'naive-ui'
+import { NAvatar, NDropdown, useMessage } from 'naive-ui'
 import { RouterLink } from 'vue-router';
 
 import { useConfigStore } from '@/stores/configStore';
 const configStore = useConfigStore();
 const config = configStore.sysConfig;
+
+const options = [
+    {
+        label: "用户资料",
+        key: "profile",
+    },
+    {
+        label: "编辑用户资料",
+        key: "editProfile",
+    },
+    {
+        label: "退出登录",
+        key: "logout",
+    }
+]
+const message = useMessage();
+const handleSelect = (key) => {
+    message.info(String(key));
+}
 </script>
 
 <template>
@@ -19,11 +38,11 @@ const config = configStore.sysConfig;
                 <router-link :to="item.link" class="nav-link">{{ item.name }}</router-link>
             </template>
         </div>
-        <div class="header-avatar-button">
-            <n-avatar round :size="40" color="#2D76C4" text-color="#fff">
+        <n-dropdown trigger="click" placement="bottom" :options="options" @select="handleSelect">
+            <n-avatar round :size="40" color="#ededed" text-color="#fff" class="header-avatar-button">
                 {{ config.userInitials }}
             </n-avatar>
-        </div>
+        </n-dropdown>
     </div>
 </template>
 
@@ -38,7 +57,7 @@ const config = configStore.sysConfig;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 2;
 }
 
 .header-icon-title {

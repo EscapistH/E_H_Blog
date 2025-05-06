@@ -16,7 +16,10 @@ if (!article) {
 <template>
     <div v-if="article">
         <h1>{{ article.title }}</h1>
-        <small>发布于：{{ article.date }}</small>
+        <div class="article-meta">
+            <small>📅 发布于：{{ article.date }}</small>
+            <small>✍️ 发布者：{{ article.author }}</small>
+        </div>
         <div>{{ article.content }}</div>
     </div>
 </template>
