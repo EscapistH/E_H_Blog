@@ -57,7 +57,7 @@ const handleSelect = (key) => {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 1000;
 }
 
 .header-icon-title {
@@ -84,6 +84,12 @@ const handleSelect = (key) => {
 .nav-link {
     color: #EDEDED;
     margin: 0 1.2rem;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #fff;
+    transform: scale(1.2, 1.2);
 }
 
 .nav-link::after {

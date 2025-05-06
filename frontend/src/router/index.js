@@ -3,20 +3,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
     {
-        path: '/404',
-        name: 'NotFound',
-        hidden: true,
-        component: () => import('@/views/404.vue'),
-        meta: {
-            title: '哦豁，页面好像不存在啊'
-        }
-    },
-    {
-        path: "/:pathMatch(.*)",
-        redirect: "/404",
-        hidden: true
-    },
-    {
         path: '/',
         name: 'Home',
         alias: ['/index', '/home'],
@@ -41,7 +27,19 @@ const routes = [
         path: '/about',
         name: 'About',
         component: () => import('@/views/About.vue')
-    }
+    },
+    {
+        path: '/404',
+        name: 'NotFound',
+        component: () => import('@/views/404.vue'),
+        meta: {
+            title: '哦豁，页面好像不存在啊'
+        }
+    },
+    {
+        path: "/:pathMatch(.*)",
+        redirect: "/404",
+    },
 ]
 
 const router = createRouter({

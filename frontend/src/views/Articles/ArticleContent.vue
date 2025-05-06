@@ -8,9 +8,8 @@ const articleStore = useArticleStore();
 const article = articleStore.getArticleById(route.params.id);
 
 if (!article) {
-    router.push({ name: 'home' })
+    router.push({ name: 'NotFound' })
 }
-
 </script>
 
 <template>
