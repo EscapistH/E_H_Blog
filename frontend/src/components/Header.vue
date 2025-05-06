@@ -33,7 +33,7 @@ const handleSelect = (key) => {
                 <h1>{{ config.title }}</h1>
             </router-link>
         </div>
-        <div class="header-items">
+        <div class="header-nav">
             <template v-for="item in config.headerItems">
                 <router-link :to="item.link" class="nav-link">{{ item.name }}</router-link>
             </template>
@@ -61,7 +61,6 @@ const handleSelect = (key) => {
 }
 
 .header-icon-title {
-    flex-grow: 0;
     margin-left: 1rem;
 }
 
@@ -73,17 +72,18 @@ const handleSelect = (key) => {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.header-items {
+.header-nav {
+    max-width: 70%;
     display: flex;
     flex-grow: 2;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    margin-left: 10rem;
 }
 
 .nav-link {
     color: #EDEDED;
-    margin: 0 0.8rem;
-    position: relative;
+    margin: 0 1.2rem;
 }
 
 .nav-link::after {
@@ -102,7 +102,7 @@ const handleSelect = (key) => {
 }
 
 .header-avatar-button {
-    flex-grow: 0;
     margin-right: 1rem;
+    cursor: pointer;
 }
 </style>

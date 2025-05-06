@@ -18,3 +18,6 @@ import { useArticleStore } from '@/stores/articleStore';
 const articleStore = useArticleStore();
 const recentArticles = articleStore.articles.slice(articleStore.articles.length - 3, articleStore.articles.length).reverse(); // 显示前3篇
 </script>
+
+<style scoped>
+</style>

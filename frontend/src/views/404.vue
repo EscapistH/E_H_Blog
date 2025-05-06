@@ -1,7 +1,6 @@
 <script setup>
 import { NResult, NButton } from 'naive-ui';
 import { RouterLink } from 'vue-router';
-
 </script>
 
 <template>
